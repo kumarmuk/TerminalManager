@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.nyota.terminal.data.model.BoardTerminal;
-import com.nyota.terminal.data.model.TerminalType;
-import com.nyota.terminal.data.obj.TerminalDAO;
-import com.nyota.terminal.data.repo.TerminalDAORepo;
+import com.nyota.terminal.model.BoardTerminal;
+import com.nyota.terminal.model.TerminalType;
 
 @RestController
 public class TerminalTypeService {

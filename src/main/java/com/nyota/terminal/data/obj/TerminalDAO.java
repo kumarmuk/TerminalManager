@@ -3,9 +3,9 @@ package com.nyota.terminal.data.obj;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.springframework.data.annotation.Id;
+import com.nyota.terminal.model.TerminalType;
 
-import com.nyota.terminal.data.model.TerminalType;
+import org.springframework.data.annotation.Id;
 
 public class TerminalDAO extends TerminalType {
 

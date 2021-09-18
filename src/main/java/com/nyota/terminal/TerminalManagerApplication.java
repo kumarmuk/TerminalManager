@@ -8,10 +8,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.nyota.terminal.data.model.BoardTerminal;
-import com.nyota.terminal.data.model.DesktopTerminal;
 import com.nyota.terminal.data.obj.TerminalDAO;
 import com.nyota.terminal.data.repo.TerminalDAORepo;
+import com.nyota.terminal.model.BoardTerminal;
+import com.nyota.terminal.model.DesktopTerminal;
 
 @SpringBootApplication
 public class TerminalManagerApplication {
