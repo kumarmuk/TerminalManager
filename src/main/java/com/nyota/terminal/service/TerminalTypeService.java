@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.nyota.terminal.model.BoardTerminal;
-import com.nyota.terminal.model.TerminalType;
+import com.nyota.terminal.model.BoardTerminalTypeInt;
+import com.nyota.terminal.model.TerminalTypeInt;
 
 @RestController
 public class TerminalTypeService {
-
+/* 
 	@Autowired
 	TerminalDAORepo terminalDAORepo;
 
@@ -45,6 +45,6 @@ public class TerminalTypeService {
 	@DeleteMapping("terminaltype/admin/{id}")
 	public void deleteTerminalType() {
 
-	}
+	} */
 
 }
