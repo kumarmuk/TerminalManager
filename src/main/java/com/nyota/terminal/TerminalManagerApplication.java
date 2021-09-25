@@ -1,7 +1,9 @@
 package com.nyota.terminal;
 
+import com.nyota.terminal.dto.TerminalTypeDTO;
 import com.nyota.terminal.model.impl.BoardTerminalType;
 import com.nyota.terminal.repo.BoardTerminalTypeRepo;
+import com.nyota.terminal.repo.TerminalTypeRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -14,6 +16,9 @@ public class TerminalManagerApplication implements CommandLineRunner {
 	@Autowired
 	BoardTerminalTypeRepo btRepo;
 
+	@Autowired
+	TerminalTypeRepo ttr;
+
 	public static void main(String[] args) {
 		SpringApplication.run(TerminalManagerApplication.class, args);
 
@@ -24,8 +29,12 @@ public class TerminalManagerApplication implements CommandLineRunner {
 		BoardTerminalType btt = new BoardTerminalType();
 		btt.setFriendlyName("Raspberry Pi 2");
 		btt.setName("Raspberry9087");
-		System.out.println ("Trying to save the BTT");
+		System.out.println("Trying to save the BTT");
 		btRepo.save(btt);
-		//btRepo.insert(btt);
+
+		TerminalTypeDTO tt = new TerminalTypeDTO();
+		tt.setBoardTerminalType(btt);
+		ttr.save(tt);
+
 	}
 }

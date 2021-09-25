@@ -1,6 +1,6 @@
 package com.nyota.terminal.model;
 
-public interface BoardTerminalTypeInt {
+public interface BoardTerminalTypeInt extends TerminalTypeInt {
 	public boolean isSolarPowered(); 
 	public void setSolarPowered(boolean solarPowered); 
 	public String getOtherNotes(); 
