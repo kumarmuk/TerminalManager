@@ -1,15 +1,12 @@
 package com.nyota.terminal;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.nyota.terminal.model.impl.BoardTerminalType;
+import com.nyota.terminal.repo.BoardTerminalTypeRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.nyota.terminal.model.impl.BoardTerminalType;
-import com.nyota.terminal.repo.BoardTerminalTypeRepo;
 
 @SpringBootApplication
 public class TerminalManagerApplication implements CommandLineRunner {
