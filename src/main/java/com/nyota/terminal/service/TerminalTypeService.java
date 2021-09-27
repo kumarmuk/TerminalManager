@@ -1,50 +1,27 @@
 package com.nyota.terminal.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
+import com.nyota.terminal.dao.TerminalTypeDAO;
+import com.nyota.terminal.dto.TerminalTypeDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.nyota.terminal.model.BoardTerminalTypeInt;
-import com.nyota.terminal.model.TerminalTypeInt;
-
 @RestController
+@ComponentScan ("com.nyota.terminal.dao")
 public class TerminalTypeService {
-/* 
+
 	@Autowired
-	TerminalDAORepo terminalDAORepo;
+	TerminalTypeDAO terminalTypeDAO;
 
 	@GetMapping("/terminaltype")
 	@ResponseBody
-	public List<TerminalDAO> getTermnalType() {
-		List<TerminalDAO> list = terminalDAORepo.findAll();
-		return list;
+	public List<TerminalTypeDTO> getTermnalType() {
+		System.out.println ("Trying to get all terminal types");
+		return terminalTypeDAO.getAllTerminalTypeDTO();
 	}
-
-	@GetMapping("/terminaltype/{name}")
-	@ResponseBody
-	public TerminalDAO getTermnalTypeByName(String terminalName) {
-		terminalDAORepo.findById(terminalName);
-		
-		return null;
-	}
-
-	@PostMapping("/terminaltyp/admin/")
-	public void saveUpdateTerminalType() {
-
-	}
-
-	@DeleteMapping("terminaltype/admin/{id}")
-	public void deleteTerminalType() {
-
-	} */
-
 }

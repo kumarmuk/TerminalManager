@@ -8,14 +8,20 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.nyota.terminal.dto.TerminalTypeDTO;
 import com.nyota.terminal.model.impl.BoardTerminalType;
+import com.nyota.terminal.model.impl.TerminalType;
 import com.nyota.terminal.repo.BoardTerminalTypeRepo;
+import com.nyota.terminal.repo.TerminalTypeRepo;
 
 @SpringBootApplication
 public class TerminalManagerApplication implements CommandLineRunner {
 
 	@Autowired
 	BoardTerminalTypeRepo btRepo;
+
+	@Autowired
+	TerminalTypeRepo ttRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TerminalManagerApplication.class, args);
@@ -29,6 +35,9 @@ public class TerminalManagerApplication implements CommandLineRunner {
 		btt.setName("Raspberry9087");
 		System.out.println ("Trying to save the BTT");
 		btRepo.save(btt);
-		//btRepo.insert(btt);
+
+		TerminalTypeDTO ttDTO = new TerminalTypeDTO(btt);
+		ttRepo.save (ttDTO);
+	
 	}
 }
