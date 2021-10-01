@@ -22,6 +22,9 @@ public class TerminalTypeService {
 	@ResponseBody
 	public List<TerminalTypeDTO> getTermnalType() {
 		System.out.println ("Trying to get all terminal types");
-		return terminalTypeDAO.getAllTerminalTypeDTO();
+		List<TerminalTypeDTO> list = terminalTypeDAO.getAllTerminalTypeDTO();
+		//list.iterator();
+		
+		return list;
 	}
 }

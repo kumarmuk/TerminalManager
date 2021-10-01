@@ -2,6 +2,7 @@ package com.nyota.terminal;
 
 import com.nyota.terminal.dto.TerminalTypeDTO;
 import com.nyota.terminal.model.impl.BoardTerminalType;
+import com.nyota.terminal.model.impl.DesktopTerminalType;
 import com.nyota.terminal.repo.BoardTerminalTypeRepo;
 import com.nyota.terminal.repo.TerminalTypeRepo;
 
@@ -33,7 +34,14 @@ public class TerminalManagerApplication implements CommandLineRunner {
 		btRepo.save(btt);
 
 		TerminalTypeDTO ttDTO = new TerminalTypeDTO(btt);
-		ttRepo.save (ttDTO);
-	
+		ttRepo.save(ttDTO);
+
+		DesktopTerminalType dt = new DesktopTerminalType();
+		dt.setFriendlyName("Lenovo Desktop");
+		dt.setWeight(24);
+
+		TerminalTypeDTO ttDTO1 = new TerminalTypeDTO(dt);
+		ttRepo.save(ttDTO1);
+
 	}
 }
