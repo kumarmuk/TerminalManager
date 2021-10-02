@@ -2,8 +2,6 @@ package com.nyota.terminal.dao;
 
 import java.util.List;
 
-import com.nyota.terminal.dto.TerminalTypeDTO;
-import com.nyota.terminal.repo.TerminalTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TerminalTypeDAO {
 
-    @Autowired
+   /*  @Autowired
     TerminalTypeRepo terminalTypeRepo;
 
     public void saveTerminalype(TerminalTypeDTO terminalType) {
@@ -31,5 +29,5 @@ public class TerminalTypeDAO {
     public List<TerminalTypeDTO> getAllTerminalTypeDTO() {
         return terminalTypeRepo.findAll();
     }
-
+ */
 }

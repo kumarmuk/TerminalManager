@@ -1,8 +1,6 @@
-package com.nyota.terminal.model.impl;
+package com.nyota.terminal.model;
 
-import com.nyota.terminal.model.TerminalTypeInt;
-
-public abstract class  TerminalTypeAbstract implements TerminalTypeInt {
+public abstract class  TerminalTypeAbstract {
 
     private String cacheSize;
     private String displayPortType;

@@ -1,15 +1,7 @@
-package com.nyota.terminal.model.impl;
+package com.nyota.terminal.model;
 
-import com.nyota.terminal.model.BoardTerminalTypeInt;
-import org.springframework.data.annotation.Id;
+public class BoardTerminalType extends TerminalTypeAbstract {
 
-
-
-public class BoardTerminalType extends TerminalTypeAbstract implements BoardTerminalTypeInt {
-
-    @Id
-    private String id;
-    
     private String terminaltypeId;
     private boolean integratedGSMCard;
     private String otherNotes;
@@ -25,33 +17,27 @@ public class BoardTerminalType extends TerminalTypeAbstract implements BoardTerm
         this.terminaltypeId = terminaltypeId;
     }
 
-    @Override
     public String getOtherNotes() {
         return this.otherNotes;
     }
 
-    @Override
     public boolean isIntegratedGSMCard() {
         return this.integratedGSMCard;
     }
 
-    @Override
     public boolean isSolarPowered() {
         return this.solarPowered;
     }
 
-    @Override
     public void setIntegratedGSMCard(boolean integratedGSMCard) {
         this.integratedGSMCard = integratedGSMCard;
     }
 
-    @Override
     public void setOtherNotes(String otherNotes) {
         this.otherNotes = otherNotes;
         
     }
 
-    @Override
     public void setSolarPowered(boolean solarPowered) {
         this.solarPowered = solarPowered;
         
