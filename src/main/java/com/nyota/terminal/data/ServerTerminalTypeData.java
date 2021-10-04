@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="TerminalType")
-public class ServerTerminalTypeData extends ServerTerminalType implements DataInterface {
+public class ServerTerminalTypeData extends ServerTerminalType implements TerminalTypeProperties {
 
     @Id
     private String id;

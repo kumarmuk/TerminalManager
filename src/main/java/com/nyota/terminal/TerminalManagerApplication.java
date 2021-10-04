@@ -1,9 +1,9 @@
 package com.nyota.terminal;
 
 import com.nyota.terminal.data.BoardTerminalTypeData;
-import com.nyota.terminal.data.DataInterface;
 import com.nyota.terminal.data.ServerTerminalTypeData;
 import com.nyota.terminal.data.TerminalTypeData;
+import com.nyota.terminal.data.TerminalTypeProperties;
 import com.nyota.terminal.model.BoardTerminalType;
 import com.nyota.terminal.model.DesktopTerminalType;
 import com.nyota.terminal.model.ServerTerminalType;
@@ -60,13 +60,13 @@ public class TerminalManagerApplication implements CommandLineRunner {
 		// TerminalTypeDTO ttDTO1 = new TerminalTypeDTO(dt);
 		// ttRepo.save(ttDTO1);
 
-		DataInterface dt = btd;
+		TerminalTypeProperties dt = btd;
 		
 		TerminalTypeData ttd = new TerminalTypeData();
 		ttd.setDt(dt);
 		trr.save(ttd);
 
-		DataInterface dt1 = std;
+		TerminalTypeProperties dt1 = std;
 
 		TerminalTypeData ttd1 = new TerminalTypeData();
 		ttd1.setDt(dt1);

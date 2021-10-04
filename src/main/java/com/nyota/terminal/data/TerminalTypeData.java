@@ -8,7 +8,7 @@ public class TerminalTypeData {
     @Id 
     private String id;
 
-    private DataInterface dt;
+    private TerminalTypeProperties dt;
 
     public String getId() {
         return id;
@@ -18,11 +18,11 @@ public class TerminalTypeData {
         this.id = id;
     }
 
-    public DataInterface getDt() {
+    public TerminalTypeProperties getDt() {
         return dt;
     }
 
-    public void setDt(DataInterface dt) {
+    public void setDt(TerminalTypeProperties dt) {
         this.dt = dt;
     }
 
