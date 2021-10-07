@@ -1,13 +1,5 @@
 package com.nyota.terminal;
 
-import com.nyota.terminal.data.BoardTerminalTypeData;
-import com.nyota.terminal.data.ServerTerminalTypeData;
-import com.nyota.terminal.data.TerminalTypeData;
-import com.nyota.terminal.data.TerminalTypeProperties;
-import com.nyota.terminal.model.BoardTerminalType;
-import com.nyota.terminal.model.DesktopTerminalType;
-import com.nyota.terminal.model.ServerTerminalType;
-import com.nyota.terminal.repo.BoardTerminalTypeRepo;
 import com.nyota.terminal.repo.TerminalTypeRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TerminalManagerApplication implements CommandLineRunner {
 
 	@Autowired
-	BoardTerminalTypeRepo btRepo;
-
-
-	@Autowired
 	TerminalTypeRepo trr;
 
-	/*
-	 * @Autowired TerminalTypeRepo ttRepo;
-	 */
 	public static void main(String[] args) {
 		SpringApplication.run(TerminalManagerApplication.class, args);
 
@@ -41,11 +26,7 @@ public class TerminalManagerApplication implements CommandLineRunner {
 		System.out.println("Trying to save the BTT");
 		btRepo.save(btt); */
 
-		BoardTerminalTypeData btd = new BoardTerminalTypeData();
-		btd.setFriendlyName("Raspberry Pi 2");
-		btd.setName("Raspberry9087");
-		System.out.println("Trying to save the BTD");
-		btRepo.save(btd);
+	
 
 		// TerminalTypeDTO ttDTO = new TerminalTypeDTO(btt);
 		// ttRepo.save(ttDTO);
@@ -54,7 +35,7 @@ public class TerminalManagerApplication implements CommandLineRunner {
 		// dt.setFriendlyName("Lenovo Desktop");
 		// dt.setWeight(24);
 
-		ServerTerminalTypeData std = new ServerTerminalTypeData();
+		/* ServerTerminalTypeData std = new ServerTerminalTypeData();
 		std.setRackType("HP");
 
 		// TerminalTypeDTO ttDTO1 = new TerminalTypeDTO(dt);
@@ -70,7 +51,6 @@ public class TerminalManagerApplication implements CommandLineRunner {
 
 		TerminalTypeData ttd1 = new TerminalTypeData();
 		ttd1.setDt(dt1);
-		trr.save(ttd1);
-
+		trr.save(ttd1); */
 	}
 }

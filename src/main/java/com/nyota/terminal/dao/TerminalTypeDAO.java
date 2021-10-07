@@ -2,6 +2,9 @@ package com.nyota.terminal.dao;
 
 import java.util.List;
 
+import com.nyota.terminal.data.TerminalTypeData;
+import com.nyota.terminal.repo.TerminalTypeRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,23 +14,33 @@ import org.springframework.stereotype.Component;
 @Component
 public class TerminalTypeDAO {
 
-   /*  @Autowired
+    @Autowired
     TerminalTypeRepo terminalTypeRepo;
 
-    public void saveTerminalype(TerminalTypeDTO terminalType) {
-        terminalTypeRepo.save(terminalType);
+    public List<String> geDistinctTerminalTypes () {
+        return null;
     }
 
-    public TerminalTypeDTO getTerminalTypeDTOById(String id) {
+
+    public void saveTerminalype(TerminalTypeData ttd) {
+        terminalTypeRepo.save(ttd);
+    }
+
+    public TerminalTypeData getTerminalTypeDTOById(String id) {
         return terminalTypeRepo.findById(id).get();
     }
 
-    public List<TerminalTypeDTO> getTerminalTypeDTOByName(String name) {
-        return terminalTypeRepo.findByName(name);
-    }
-
-    public List<TerminalTypeDTO> getAllTerminalTypeDTO() {
+    public List<TerminalTypeData> getAllTerminalTypeDTO() {
         return terminalTypeRepo.findAll();
     }
- */
+
+    /**
+     * This method will be used for storing the terminal type
+     * @param ttd
+     * @return
+     */
+    public String saveTerminalypeData (TerminalTypeData ttd){
+        return terminalTypeRepo.save(ttd).getId();
+    } 
+
 }

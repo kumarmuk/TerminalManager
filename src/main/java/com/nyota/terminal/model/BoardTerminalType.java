@@ -6,7 +6,8 @@ public class BoardTerminalType extends TerminalTypeAbstract {
     private boolean integratedGSMCard;
     private String otherNotes;
     private boolean solarPowered;
-    
+    private String terminalType = "BOARD";
+
     public BoardTerminalType () {}
 
     public String getTerminaltypeId() {
@@ -41,6 +42,11 @@ public class BoardTerminalType extends TerminalTypeAbstract {
     public void setSolarPowered(boolean solarPowered) {
         this.solarPowered = solarPowered;
         
+    }
+
+    @Override
+    public String getTerminalType() {
+        return this.terminalType;
     }
 
 }

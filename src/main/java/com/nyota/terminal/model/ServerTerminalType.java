@@ -1,6 +1,9 @@
 package com.nyota.terminal.model;
 
 public class ServerTerminalType extends TerminalTypeAbstract {
+
+    private String terminalType = "Server";
+
     private String rackType;
 
     public String getRackType() {
@@ -10,5 +13,12 @@ public class ServerTerminalType extends TerminalTypeAbstract {
     public void setRackType(String rackType) {
         this.rackType = rackType;
     }
+
+    @Override
+    public String getTerminalType() {
+        return this.terminalType;
+    }
+
+    
     
 }

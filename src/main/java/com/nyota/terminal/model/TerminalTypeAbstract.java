@@ -2,13 +2,13 @@ package com.nyota.terminal.model;
 
 public abstract class  TerminalTypeAbstract {
 
+    private String name;
     private String cacheSize;
     private String displayPortType;
     private int displayPorts;
     private String formFactor;   
     private String friendlyName;
     private boolean lanCard;
-    private String name;
     private int numLanCards;
     private String numOfCores;
     private int numWifiCards;
@@ -24,6 +24,12 @@ public abstract class  TerminalTypeAbstract {
     private int usb3Ports;
     private String vendor;
     private boolean wifiCard;
+    private String terminalType;
+
+    public abstract String getTerminalType();
+
+    //public abstract void setTerminalType(String terminalType);
+    
     public String getCacheSize() {
         return cacheSize;
     }
