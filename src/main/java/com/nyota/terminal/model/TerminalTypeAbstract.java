@@ -24,7 +24,7 @@ public abstract class  TerminalTypeAbstract {
     private int usb3Ports;
     private String vendor;
     private boolean wifiCard;
-    private String terminalType;
+    //private String terminalType;
 
     public abstract String getTerminalType();
 

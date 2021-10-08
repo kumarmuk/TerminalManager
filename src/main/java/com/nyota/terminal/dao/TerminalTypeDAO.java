@@ -22,10 +22,6 @@ public class TerminalTypeDAO {
     }
 
 
-    public void saveTerminalype(TerminalTypeData ttd) {
-        terminalTypeRepo.save(ttd);
-    }
-
     public TerminalTypeData getTerminalTypeDTOById(String id) {
         return terminalTypeRepo.findById(id).get();
     }

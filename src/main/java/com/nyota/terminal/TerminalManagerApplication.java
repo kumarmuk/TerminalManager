@@ -2,6 +2,8 @@ package com.nyota.terminal;
 
 import com.nyota.terminal.repo.TerminalTypeRepo;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,14 +15,17 @@ public class TerminalManagerApplication implements CommandLineRunner {
 	@Autowired
 	TerminalTypeRepo trr;
 
+	private static final Logger logger = LogManager.getLogger(TerminalManagerApplication.class);
+
 	public static void main(String[] args) {
 		SpringApplication.run(TerminalManagerApplication.class, args);
-
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-/* 		BoardTerminalType btt = new BoardTerminalType();
+		System.out.println (logger.getName());
+		logger.info ("The Spring Appliction has started up");
+		/* 		BoardTerminalType btt = new BoardTerminalType();
 		btt.setFriendlyName("Raspberry Pi 2");
 		btt.setName("Raspberry9087");
 		System.out.println("Trying to save the BTT");

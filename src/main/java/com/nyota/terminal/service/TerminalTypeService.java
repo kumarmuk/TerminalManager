@@ -8,8 +8,11 @@ import com.nyota.terminal.data.TerminalTypeData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 @RestController
 @ComponentScan("com.nyota.terminal.dao")
@@ -18,13 +21,19 @@ public class TerminalTypeService {
 	@Autowired
 	TerminalTypeDAO terminalTypeDAO;
 
+	private static final Logger logger = LogManager.getLogger(TerminalTypeService.class);
+
 	@GetMapping("/terminaltype")
 	@ResponseBody
 	public List<TerminalTypeData> getTermnalType() {
-		System.out.println("Trying to get all terminal types");
+		logger.info ("GET request to list all the terminal types");
 		List<TerminalTypeData> list = terminalTypeDAO.getAllTerminalTypeDTO();
-		// list.iterator();
-
 		return list;
+	}
+
+	@PostMapping("/terminaltype")
+	@ResponseBody
+	public String posterminalType (TerminalTypeData ttd) {
+		return terminalTypeDAO.saveTerminalypeData(ttd);
 	}
 }
