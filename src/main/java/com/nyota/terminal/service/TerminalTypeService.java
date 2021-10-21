@@ -5,14 +5,14 @@ import java.util.List;
 import com.nyota.terminal.dao.TerminalTypeDAO;
 import com.nyota.terminal.data.TerminalTypeData;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 
 @RestController
 @ComponentScan("com.nyota.terminal.dao")
@@ -21,7 +21,7 @@ public class TerminalTypeService {
 	@Autowired
 	TerminalTypeDAO terminalTypeDAO;
 
-	private static final Logger logger = LogManager.getLogger(TerminalTypeService.class);
+	private static final Logger logger = LoggerFactory.getLogger(TerminalTypeService.class);
 
 	@GetMapping("/terminaltype")
 	@ResponseBody

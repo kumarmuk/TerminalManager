@@ -2,7 +2,7 @@ package com.nyota.terminal.model;
 
 public class ServerTerminalType extends TerminalTypeAbstract {
 
-    private String terminalType = "Server";
+    private String terminalType = "SERVER";
 
     private String rackType;
 

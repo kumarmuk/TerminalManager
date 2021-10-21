@@ -2,7 +2,7 @@ package com.nyota.terminal.model;
 
 public class DesktopTerminalType extends TerminalTypeAbstract  {
     
-    private String terminalType = "Desktop";
+    private String terminalType = "DESKTOP";
 
     private int weight;
 
