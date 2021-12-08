@@ -36,7 +36,9 @@ public class TerminalTypeDAO {
      * @return
      */
     public String saveTerminalypeData (TerminalTypeData ttd){
-        return terminalTypeRepo.save(ttd).getId();
+        String id = terminalTypeRepo.save(ttd).getId();
+        System.out.println ("Entity with the " + id + " is being savd;");
+        return id;
     } 
 
 }

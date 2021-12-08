@@ -7,8 +7,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="TerminalType")
 public class ServerTerminalTypeData extends ServerTerminalType implements TerminalTypeProperties {
-
-    @Id
-    private String id;
     
 }

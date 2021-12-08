@@ -1,14 +1,20 @@
 package com.nyota.terminal;
 
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nyota.terminal.dao.TerminalTypeDAO;
 import com.nyota.terminal.data.BoardTerminalTypeData;
 import com.nyota.terminal.data.DesktopTerminalTypeData;
 import com.nyota.terminal.data.ServerTerminalTypeData;
 import com.nyota.terminal.data.TerminalTypeData;
-import com.nyota.terminal.data.TerminalTypeProperties;
-import com.nyota.terminal.model.BoardTerminalType;
-import com.nyota.terminal.repo.TerminalTypeRepo;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +37,7 @@ public class TerminalManagerApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println(logger.getName());
+		this.saveTestData();
 		logger.info("The Spring Appliction has started up");
 	}
 
@@ -46,8 +53,16 @@ public class TerminalManagerApplication implements CommandLineRunner {
 		bbt.setFriendlyName("ARM Board");
 		bbt.setName("Raspberry Pi");
 		ttd.setTerminalTypeProperties(bbt);
+		// terminalTypeDAO.saveTerminalypeData(ttd);
+		ObjectMapper objMapper = new ObjectMapper();
 
-		terminalTypeDAO.saveTerminalypeData(ttd);
+		try {
+			String objJson = objMapper.writeValueAsString(ttd);
+			System.out.println (objJson);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 
 		DesktopTerminalTypeData ddt = new DesktopTerminalTypeData();
