@@ -15,6 +15,8 @@ import com.nyota.terminal.data.BoardTerminalTypeData;
 import com.nyota.terminal.data.DesktopTerminalTypeData;
 import com.nyota.terminal.data.ServerTerminalTypeData;
 import com.nyota.terminal.data.TerminalTypeData;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +45,7 @@ public class TerminalManagerApplication implements CommandLineRunner {
 
 	public void saveTestData() {
 
+		/*
 		TerminalTypeData ttd = new TerminalTypeData();
 
 		BoardTerminalTypeData bbt = new BoardTerminalTypeData();
@@ -68,7 +71,12 @@ public class TerminalManagerApplication implements CommandLineRunner {
 		DesktopTerminalTypeData ddt = new DesktopTerminalTypeData();
 
 		ServerTerminalTypeData stt = new ServerTerminalTypeData();
+*/
+	
 
-	}
+
+
+
+}
 
 }

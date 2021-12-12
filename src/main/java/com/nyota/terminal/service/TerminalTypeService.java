@@ -3,14 +3,14 @@ package com.nyota.terminal.service;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nyota.terminal.dao.TerminalTypeDAO;
+import com.nyota.terminal.data.TerminalType;
 import com.nyota.terminal.data.TerminalTypeData;
 import com.nyota.terminal.data.TerminalTypeProperties;
-import com.nyota.terminal.data.TerminalTypePropertiesImpl;
 
+import org.apache.tomcat.util.json.JSONParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,11 +43,9 @@ public class TerminalTypeService {
 	@ResponseBody
 	public String posterminalType (@RequestBody String ttpInput) throws JsonMappingException, JsonProcessingException {
 		ObjectMapper objMapper = new ObjectMapper();
-		//TerminalTypePropertiesImpl ttplImpl = objMapper.readValue(ttpInput, TerminalTypePropertiesImpl.class);
-		TerminalTypeProperties ttp = objMapper.readValue(ttpInput, new TypeReference<TerminalTypeProperties>(){});
-		
-		TerminalTypeData ttd = new TerminalTypeData();
-		ttd.setTerminalTypeProperties(ttp);
-		return terminalTypeDAO.saveTerminalypeData(ttd);
+		TerminalType ttp = objMapper.readValue(ttpInput, TerminalType.class);
+		System.out.println (ttp.getClassification());
+		System.out.println (ttp.getTerminalProperties());		
+		return null;
 	}
 }

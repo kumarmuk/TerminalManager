@@ -25,10 +25,5 @@ public class TerminalTypeData {
     public void setTerminalTypeProperties(TerminalTypeProperties terminalTypeProperties) {
         this.terminalTypeProperties = terminalTypeProperties;
     }
-
-
-
-    
-    
     
 }
