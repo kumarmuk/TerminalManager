@@ -1,6 +1,7 @@
 package com.nyota.terminal.data;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 
@@ -11,7 +12,7 @@ public class TerminalType {
     
     private String classification;
 
-    private String terminalProperties;
+    private Map<String, String> terminalProperties;
 
     public String getId() {
         return id;
@@ -29,11 +30,29 @@ public class TerminalType {
         this.classification = classification;
     }
 
-    public String getTerminalProperties() {
+    public Map<String, String> getTerminalProperties() {
         return terminalProperties;
     }
 
-    public void setTerminalProperties(String terminalProperties) {
+    public void setTerminalProperties(Map<String, String> terminalProperties) {
         this.terminalProperties = terminalProperties;
     }
+
+/*
+    public TerminalTypeProperties getTerminalProperties() {
+        return terminalProperties;
+    }
+
+    public void setTerminalProperties(BoardTerminalTypeData terminalProperties) {
+        this.terminalProperties = terminalProperties;
+    }
+
+    public void setTerminalProperties(DesktopTerminalTypeData terminalProperties) {
+        this.terminalProperties = terminalProperties;
+    }
+
+    public void setTerminalProperties(ServerTerminalTypeData terminalProperties) {
+        this.terminalProperties = terminalProperties;
+    }
+*/
 }

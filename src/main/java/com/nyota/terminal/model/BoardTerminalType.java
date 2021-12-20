@@ -2,21 +2,12 @@ package com.nyota.terminal.model;
 
 public class BoardTerminalType extends TerminalTypeAbstract {
 
-    private String terminaltypeId;
     private boolean integratedGSMCard;
     private String otherNotes;
     private boolean solarPowered;
-    private String terminalType = "BOARD";
-
+    
     public BoardTerminalType () {}
 
-    public String getTerminaltypeId() {
-        return terminaltypeId;
-    }
-
-    public void setTerminaltypeId(String terminaltypeId) {
-        this.terminaltypeId = terminaltypeId;
-    }
 
     public String getOtherNotes() {
         return this.otherNotes;
@@ -44,9 +35,12 @@ public class BoardTerminalType extends TerminalTypeAbstract {
         
     }
 
+
     @Override
     public String getTerminalType() {
-        return this.terminalType;
+        // TODO Auto-generated method stub
+        return "BOARD";
     }
 
+   
 }
